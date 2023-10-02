@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>Font Playground</title>
+    <script>
+      const inputElement = document.querySelector('.inputbox');
+    
+      inputElement.addEventListener('change', function(event) {
+        document.querySelector(".font-pg").innerText = event.target.value
+      });
+</script>
+  <style>
+    @import url('https://fonts.cdnfonts.com/css/stretch-pro');
+    .font-pg {font-family: 'Stretch Pro'}
+  </style>
+  </head>
+  <body>
+    <input type="text" class="inputbox" placeholder="Text">
+    <p class="font-pg"></p>
+  </body>
+</html>

@@ -4,7 +4,11 @@
     <link id="google-font" rel="stylesheet" href="">
     <script>
     const urlParams = new URLSearchParams(window.location.search)
-    document.getElementById("google-font").href = `https://fonts.googleapis.com/css?family=${urlParams.get("font")}`
+    if (urlParams.get("provider")=="google_fonts") {
+      document.getElementById("google-font").href = `https://fonts.googleapis.com/css?family=${urlParams.get("font")}`
+    } else if (urlParams.get("provider")=="cdn_fonts") {
+      document.getElementById("google-font").href = `'https://fonts.cdnfonts.com/css/${urlParams.get("font").toLowerCase().replace(/ /g, '-')}`
+    }
   </script>
     <script>
       document.addEventListener('DOMContentLoaded',function() {

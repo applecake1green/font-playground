@@ -5,11 +5,10 @@
     <script>
     const urlParams = new URLSearchParams(window.location.search)
     document.getElementById("google-font").href = `https://fonts.googleapis.com/css?family=${urlParams.get("font")}`
-    // If the 'font' parameter exists, change the font for .font-pg
-    document.querySelector(".font-pg").style.fontFamily = `'${urlParams.get("font")}', 'SF Pro Display'`
   </script>
     <script>
       document.addEventListener('DOMContentLoaded',function() {
+      document.querySelector(".font-pg").style.fontFamily = `'${urlParams.get("font")}', 'SF Pro Display'`
       document.querySelector('.inputbox').addEventListener('input', function(event) {
         document.querySelector(".font-pg").textContent = event.target.value
       });

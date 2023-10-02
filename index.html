@@ -9,6 +9,7 @@
     <script>
       document.addEventListener('DOMContentLoaded',function() {
       document.querySelector(".font-pg").style.fontFamily = `'${urlParams.get("font")}', 'SF Pro Display'`
+      if (urlParams.get("weight")) {document.querySelector(".font-pg").style.fontWeight = urlParams.get("weight")}
       document.querySelector('.inputbox').addEventListener('input', function(event) {
         document.querySelector(".font-pg").textContent = event.target.value
       });

@@ -19,7 +19,7 @@
       document.querySelector(".font-pg").style.fontFamily = `'${urlParams.get("font")}', 'SF Pro Display'`
       if (urlParams.get("weight")) {document.querySelector(".font-pg").style.fontWeight = urlParams.get("weight")}
       if (urlParams.get("size")) {document.querySelector(".font-pg").style.fontSize = urlParams.get("size")}
-      if (urlParams.get("text")) {document.querySelector(".font-pg").textContent = urlParams.get("text");document.querySelector(".inputbox").value = urlParams.get("text")}
+      if (urlParams.get("text")) {document.querySelector(".font-pg").innerHTML = urlParams.get("text").replace(':zumo:',`<img src="https://cdn.discordapp.com/avatars/440599126401613865/af48187c7816f4ddb965d94f7ac8a872.webp?size=512" style="width: ${document.querySelector(".font-pg").style.fontSize}; height: ${document.querySelector(".font-pg").style.fontSize}; vertical-align: middle">`);document.querySelector(".inputbox").value = urlParams.get("text")}
       document.querySelector(".font-pg").style.fontStyle = urlParams.get("style")
       document.querySelector('.inputbox').addEventListener('input', function(event) {
       var t = event.target.value

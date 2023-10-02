@@ -6,10 +6,7 @@
     const urlParams = new URLSearchParams(window.location.search)
     document.getElementById("google-font").href = `https://fonts.googleapis.com/css?family=${urlParams.get("font")}`
     // If the 'font' parameter exists, change the font for .font-pg
-    var fontElements = document.querySelectorAll('.font-pg');
-    for (var i = 0; i < fontElements.length; i++) {
-      fontElements[i].style.fontFamily = "'" + urlParams.get("font") + "', 'SF Pro Display'";
-    }
+    document.querySelector(".font-pg").style.fontFamily = `'${urlParams.get("font")}', 'SF Pro Display'`
   </script>
     <script>
       document.addEventListener('DOMContentLoaded',function() {

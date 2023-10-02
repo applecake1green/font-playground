@@ -2,10 +2,8 @@
   <head>
     <title>Font Playground</title>
     <script>
-      document.addEventListener('DOMContentLoaded',{
-      const inputElement = document.querySelector('.inputbox');
-    
-      inputElement.addEventListener('change', function(event) {
+      document.addEventListener('DOMContentLoaded',function() {
+      document.querySelector('.inputbox').addEventListener('change', function(event) {
         document.querySelector(".font-pg").innerText = event.target.value
       });
       })

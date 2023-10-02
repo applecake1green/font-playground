@@ -3,24 +3,12 @@
     <title>Font Playground</title>
     <link id="google-font" rel="stylesheet" href="">
     <script>
-    // Function to parse URL parameters
-    function getParameterByName(name, url) {
-      if (!url) url = window.location.href;
-      name = name.replace(/[\[\]]/g, "\\$&");
-      var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-          results = regex.exec(url);
-      if (!results) return null;
-      if (!results[2]) return '';
-      return decodeURIComponent(results[2].replace(/\+/g, " "));
-    }
-  
-    var fontParam = getParameterByName('font');
-  
-    if (fontParam) {
+    const urlParams = new URLSearchParams(window.location.search)
+    document.getElementById("google-font").href = `https://fonts.googleapis.com/css?family=${urlParams.get("font")}`
     // If the 'font' parameter exists, change the font for .font-pg
     var fontElements = document.querySelectorAll('.font-pg');
     for (var i = 0; i < fontElements.length; i++) {
-      fontElements[i].style.fontFamily = "'" + fontParam + "', sans-serif";
+      fontElements[i].style.fontFamily = "'" + urlParams.get("font") + "', 'SF Pro Display'";
     }
     }
   </script>

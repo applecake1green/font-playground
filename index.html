@@ -3,8 +3,8 @@
     <title>Font Playground</title>
     <script>
       document.addEventListener('DOMContentLoaded',function() {
-      document.querySelector('.inputbox').addEventListener('change', function(event) {
-        document.querySelector(".font-pg").innerText = event.target.value
+      document.querySelector('.inputbox').addEventListener('input', function(event) {
+        document.querySelector(".font-pg").textContent = event.target.value
       });
       })
 </script>
